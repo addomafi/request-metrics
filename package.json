@@ -1,0 +1,35 @@
+{
+  "name": "request-metrics",
+  "author": "Adauto Martins <addomafi@gmail.com>",
+  "description": "Library that collect metrics from HTTP(s) requests made by the request module.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/addomafi/request-metrics"
+  },
+  "bugs": {
+    "url": "https://github.com/addomafi/request-metrics/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "request",
+    "http",
+    "https",
+    "metrics"
+  ],
+  "scripts": {
+    "test": "node node_modules/.bin/mocha"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "detect-engine": "~1.0.2",
+    "express": "~4.8.6",
+    "mocha": "^4.0.1",
+    "request": "~2.50.0",
+    "should": "~4.0.4"
+  },
+  "dependencies": {
+    "moment": "^2.19.1",
+    "stringify-clone": "^1.0.0"
+  }
+}
