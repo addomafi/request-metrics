@@ -11,5 +11,5 @@ returned by `require('request')`:
 ```js
 var request = require('request');
 
-require('request-metrics')(request);
+require('request-metrics-js')(request);
 ```
