@@ -1,5 +1,5 @@
 {
-  "name": "request-metrics",
+  "name": "request-metrics-js",
   "author": "Adauto Martins <addomafi@gmail.com>",
   "description": "Library that collect metrics from HTTP(s) requests made by the request module.",
   "version": "0.1.0",
