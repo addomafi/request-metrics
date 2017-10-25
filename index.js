@@ -1,5 +1,7 @@
-var clone = require('stringify-clone');
-let moment = require('moment')
+const clone = require('stringify-clone');
+const moment = require('moment')
+const { StringDecoder } = require('string_decoder');
+const decoder = new StringDecoder('utf8');
 
 module.exports = exports = function(request, log) {
   log = log || exports.log
@@ -44,6 +46,11 @@ module.exports = exports = function(request, log) {
           console.info(event)
           // If got an unsuccessful response, log it
           if ([200,202].indexOf(this.response.statusCode) < 0) {
+            log('request', {
+              headers    : clone(this.headers),
+              body       : decoder.write(this.body)
+            }, this)
+
             log('responseFault', {
               headers    : clone(res.headers),
               statusCode : res.statusCode,
