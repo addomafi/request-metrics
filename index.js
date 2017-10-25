@@ -43,7 +43,7 @@ module.exports = exports = function(request, log) {
             }
           }
 
-          console.info(event)
+          console.info(JSON.stringify(event))
           // If got an unsuccessful response, log it
           if ([200,202].indexOf(this.response.statusCode) < 0) {
             log('request', {
