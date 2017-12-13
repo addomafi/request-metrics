@@ -39,24 +39,26 @@ module.exports = exports = function(request, log) {
                 }
 
                 // The result can be accessed through the `m`-variable.
-                event.soapAction = m[1];
+                event.soapAction = m[1].replace('"', '');
             }
           }
 
-          console.info(JSON.stringify(event))
           // If got an unsuccessful response, log it
           if ([200,202].indexOf(this.response.statusCode) < 0) {
-            log('request', {
+            event.hasError = true;
+            event.request = {
               headers    : clone(this.headers),
               body       : decoder.write(this.body)
-            }, this)
+            };
 
-            log('responseFault', {
+            event.responseFault = {
               headers    : clone(res.headers),
               statusCode : res.statusCode,
               body       : res.body
-            }, this)
+            };
           }
+
+          console.info(`request-metrics-js\t${JSON.stringify(event)}`)
         }
       })
 
