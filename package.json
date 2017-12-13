@@ -2,7 +2,7 @@
   "name": "request-metrics-js",
   "author": "Adauto Martins <addomafi@gmail.com>",
   "description": "Library that collect metrics from HTTP(s) requests made by the request module.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/addomafi/request-metrics"
