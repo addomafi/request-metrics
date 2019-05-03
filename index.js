@@ -48,7 +48,7 @@ module.exports = exports = function(request, log) {
             event.hasError = true;
             event.request = {
               headers    : clone(this.headers),
-              body       : decoder.write(this.body)
+              body       : (this.body) ? decoder.write(this.body) : null
             };
 
             event.responseFault = {
