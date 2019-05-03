@@ -44,11 +44,11 @@ module.exports = exports = function(request, log) {
           }
 
           // If got an unsuccessful response, log it
-          if ([200,202].indexOf(this.response.statusCode) < 0) {
+          if ([200,201,202,203,204].indexOf(this.response.statusCode) < 0) {
             event.hasError = true;
             event.request = {
               headers    : clone(this.headers),
-              body       : decoder.write(this.body)
+              body       : (this.body) ? decoder.write(this.body) : null
             };
 
             event.responseFault = {
